@@ -187,7 +187,7 @@
     if (!c) return renderHome();
     current = c;
     var fav = isFav(c);
-    var details = [['Glass', c.glass], ['Garnish', c.garnish], ['Special steps', c.special]]
+    var details = [['Glass', c.glass], ['Garnish', c.garnish], ['Special steps', c.special], ['Notes', c.notes]]
       .filter(function (d) { return d[1]; });
     app.innerHTML =
       '<div class="fold">' +

@@ -25,7 +25,8 @@ A cocktail quick-reference for the phone: big, glanceable ingredient amounts wit
       ],
       "glass": "Coupe",
       "garnish": "Lime wheel",
-      "special": "Dry shake (no ice) first"   // only when there's a non-obvious step
+      "special": "Dry shake (no ice) first",  // only when there's a non-obvious step
+      "notes": "Ideally Brand X soda"         // only when Ben asks for a note
     }
   ]
 }
@@ -33,7 +34,7 @@ A cocktail quick-reference for the phone: big, glanceable ingredient amounts wit
 
 - `amount` is a number in the given `unit` (decimals are fine: `0.75`); it's shown as a stacked fraction when it's a half, third, quarter or eighth, and multiplied for batches. Units that pluralize: `dash`, `drop`, `barspoon`, `leaf`, `sprig`, `slice`, `wedge`, `cube`, `piece`. Omit `unit` for counts.
 - A text `amount` (e.g. `"top"`, `"to taste"`) is shown as-is and not multiplied.
-- `glass`, `garnish`, `special` are optional and shown below the fold. Keep them pithy.
+- `glass`, `garnish`, `special`, `notes` are optional and shown below the fold. Keep them pithy.
 - Folders with no cocktails are hidden.
 - Tapping the star in the app overrides `favorite` on that phone only.
 

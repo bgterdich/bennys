@@ -2162,16 +2162,21 @@
           "unit": "oz"
         },
         {
-          "name": "Something & Nothing Mandarin",
+          "name": "Orange soda",
           "amount": 1.5,
           "unit": "oz"
         },
         {
-          "name": "Beer for Tacos or Athletic Upside Dawn",
+          "name": "Beer",
           "amount": 1.5,
           "unit": "oz"
+        },
+        {
+          "name": "Mezcal",
+          "amount": "floater"
         }
-      ]
+      ],
+      "notes": "Orange soda: ideally Something & Nothing Mandarin. Beer: Beer for Tacos or Athletic Upside Dawn."
     }
   ]
 }
