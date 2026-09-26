@@ -40,4 +40,4 @@ A cocktail quick-reference for the phone: big, glanceable ingredient amounts wit
 
 ## Files
 
-`index.html`, `app.css`, `app.js` (the app, no build step) · `sw.js` (offline support) · `manifest.webmanifest`, `icons/` (home-screen app) · `fonts/` (Bai Jamjuree, OFL).
+`index.html`, `app.css`, `app.js` (the app, no build step) · `sparkle.js` (tap the title for a burst of color) · `sw.js` (offline support) · `manifest.webmanifest`, `icons/` (home-screen app) · `fonts/` (Bai Jamjuree, OFL).

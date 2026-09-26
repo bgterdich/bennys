@@ -2,7 +2,7 @@
 // falls back to the cached copy when there's no connection.
 var CACHE = 'bennys-v1';
 var ASSETS = [
-  './', 'index.html', 'app.css', 'app.js', 'recipes.json', 'manifest.webmanifest',
+  './', 'index.html', 'app.css', 'app.js', 'sparkle.js', 'recipes.json', 'manifest.webmanifest',
   'icons/icon-180.png', 'icons/icon-192.png', 'icons/icon-512.png',
   'fonts/bai-jamjuree-200.woff2', 'fonts/bai-jamjuree-300.woff2', 'fonts/bai-jamjuree-400.woff2',
   'fonts/bai-jamjuree-500.woff2', 'fonts/bai-jamjuree-600.woff2'
