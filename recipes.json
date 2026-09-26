@@ -43,6 +43,10 @@
     {
       "id": "bens-recipes",
       "name": "Ben’s Recipes"
+    },
+    {
+      "id": "li-special",
+      "name": "LI - Special"
     }
   ],
   "cocktails": [
@@ -1980,6 +1984,155 @@
           "unit": "oz"
         }
       ]
+    },
+    {
+      "id": "li-thai-basil-daiquiri",
+      "name": "TBD: Thai Basil Daiquiri",
+      "folders": [
+        "li-special"
+      ],
+      "color": "#B8D27A",
+      "ingredients": [
+        {
+          "name": "Thai basil leaves",
+          "amount": 5,
+          "unit": "g"
+        },
+        {
+          "name": "White rum (Flor de Caña)",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.667,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 2,
+          "unit": "drop"
+        }
+      ],
+      "glass": "Coupe",
+      "special": "Nitro-muddle the basil; fine-strain"
+    },
+    {
+      "id": "li-spanish-chris",
+      "name": "Spanish Chris",
+      "folders": [
+        "li-special"
+      ],
+      "color": "#9CC24A",
+      "ingredients": [
+        {
+          "name": "Tarragon leaves",
+          "amount": 3.5,
+          "unit": "g"
+        },
+        {
+          "name": "Blanco mezcal (La Puritita)",
+          "amount": 1.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Luxardo Maraschino",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 3,
+          "unit": "drop"
+        }
+      ],
+      "glass": "Coupe",
+      "special": "Nitro-muddle the tarragon; fine-strain"
+    },
+    {
+      "id": "li-flat-leaf",
+      "name": "The Flat Leaf",
+      "folders": [
+        "li-special"
+      ],
+      "color": "#4E9A3A",
+      "ingredients": [
+        {
+          "name": "Parsley (or lovage) leaves",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "name": "Gin",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Sour orange juice",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 3,
+          "unit": "drop"
+        }
+      ],
+      "glass": "Coupe",
+      "special": "Nitro-muddle the parsley; fine-strain"
+    },
+    {
+      "id": "li-carvone",
+      "name": "The Carvone",
+      "folders": [
+        "li-special"
+      ],
+      "color": "#8CC63F",
+      "ingredients": [
+        {
+          "name": "Mint leaves",
+          "amount": 6,
+          "unit": "g"
+        },
+        {
+          "name": "Linie aquavit",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.44,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 3,
+          "unit": "drop"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Lemon twist",
+      "special": "Nitro-muddle the mint; fine-strain"
     }
   ]
 }
