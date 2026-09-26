@@ -1621,6 +1621,331 @@
         }
       ],
       "special": "Chill and carbonate"
+    },
+    {
+      "id": "li-old-pal",
+      "name": "Old Pal",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#B8482E",
+      "ingredients": [
+        {
+          "name": "Rye",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Campari",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Dry vermouth",
+          "amount": 0.75,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe"
+    },
+    {
+      "id": "li-rob-roy",
+      "name": "Rob Roy",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#9B4A24",
+      "ingredients": [
+        {
+          "name": "Scotch",
+          "amount": 2.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Sweet vermouth",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 2,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "id": "li-bobby-burns",
+      "name": "Bobby Burns",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#A5602A",
+      "ingredients": [
+        {
+          "name": "Scotch",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Sweet vermouth",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Benedictine",
+          "amount": 0.25,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "id": "li-manhattan-with-bourbon",
+      "name": "Manhattan with Bourbon",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#94401F",
+      "ingredients": [
+        {
+          "name": "Bourbon",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Sweet vermouth",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 2,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Cherry or orange twist"
+    },
+    {
+      "id": "li-martinez",
+      "name": "Martinez",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#A8522C",
+      "ingredients": [
+        {
+          "name": "Old Tom gin",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Sweet vermouth",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Luxardo Maraschino",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 1,
+          "unit": "dash"
+        },
+        {
+          "name": "Orange bitters",
+          "amount": 1,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Lemon twist"
+    },
+    {
+      "id": "li-hanky-panky",
+      "name": "Hanky Panky",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#7E3A22",
+      "ingredients": [
+        {
+          "name": "Sweet vermouth",
+          "amount": 1.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Gin",
+          "amount": 1.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Fernet Branca",
+          "amount": 1,
+          "unit": "barspoon"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Orange twist"
+    },
+    {
+      "id": "li-blackthorn",
+      "name": "Blackthorn",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#8C2F3A",
+      "ingredients": [
+        {
+          "name": "Plymouth gin",
+          "amount": 1.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Sweet vermouth",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Sloe gin",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Orange bitters",
+          "amount": 2,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Orange twist"
+    },
+    {
+      "id": "li-negroni",
+      "name": "Negroni",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#C23A2C",
+      "ingredients": [
+        {
+          "name": "Sweet vermouth",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Gin",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Campari",
+          "amount": 1,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe, or old fashioned with a large rock",
+      "garnish": "Orange or grapefruit twist"
+    },
+    {
+      "id": "li-pegu-club",
+      "name": "Pegu Club",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#E4B85A",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Curaçao",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Orange bitters",
+          "amount": 1,
+          "unit": "dash"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 1,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Lime wheel"
+    },
+    {
+      "id": "li-blinker",
+      "name": "Blinker",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#E07A6A",
+      "ingredients": [
+        {
+          "name": "Rye",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Grapefruit juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Raspberry syrup",
+          "amount": 1,
+          "unit": "barspoon"
+        }
+      ],
+      "glass": "Coupe"
+    },
+    {
+      "id": "li-brandy-crusta",
+      "name": "Brandy Crusta",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#D9A24A",
+      "ingredients": [
+        {
+          "name": "Cognac",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Curaçao",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Luxardo Maraschino",
+          "amount": 0.25,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Sugar rim, big lemon spiral"
     }
   ]
 }
