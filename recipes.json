@@ -114,34 +114,6 @@
       "garnish": "Coffee beans"
     },
     {
-      "id": "daiquiri",
-      "name": "Daiquiri",
-      "favorite": true,
-      "folders": [
-        "bens-recipes"
-      ],
-      "color": "#E3D9AE",
-      "ingredients": [
-        {
-          "name": "White rum",
-          "amount": 2,
-          "unit": "oz"
-        },
-        {
-          "name": "Lime juice",
-          "amount": 0.75,
-          "unit": "oz"
-        },
-        {
-          "name": "Simple syrup",
-          "amount": 0.75,
-          "unit": "oz"
-        }
-      ],
-      "glass": "Coupe",
-      "garnish": "Lime wheel"
-    },
-    {
       "id": "li-old-fashioned",
       "name": "Old Fashioned",
       "favorite": true,
@@ -1024,7 +996,8 @@
     },
     {
       "id": "li-classic-daiquiri",
-      "name": "Classic Daiquiri",
+      "name": "Daiquiri",
+      "favorite": true,
       "folders": [
         "li-shaken"
       ],
