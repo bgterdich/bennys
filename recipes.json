@@ -39,6 +39,10 @@
     {
       "id": "li-carbonated",
       "name": "LI - Carbonated"
+    },
+    {
+      "id": "bens-recipes",
+      "name": "Ben’s Recipes"
     }
   ],
   "cocktails": [
@@ -1946,6 +1950,36 @@
       ],
       "glass": "Coupe",
       "garnish": "Sugar rim, big lemon spiral"
+    },
+    {
+      "id": "bens-paloma",
+      "name": "Ben’s Paloma",
+      "folders": [
+        "bens-recipes"
+      ],
+      "color": "#EFA7A0",
+      "ingredients": [
+        {
+          "name": "Cazadores tequila blanco",
+          "amount": 1.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Grapefruit juice",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.35,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.5,
+          "unit": "oz"
+        }
+      ]
     }
   ]
 }
