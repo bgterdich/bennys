@@ -47,6 +47,10 @@
     {
       "id": "li-special",
       "name": "LI - Special"
+    },
+    {
+      "id": "restaurants-bars",
+      "name": "Restaurants/Bars"
     }
   ],
   "cocktails": [
@@ -2133,6 +2137,41 @@
       "glass": "Coupe",
       "garnish": "Lemon twist",
       "special": "Nitro-muddle the mint; fine-strain"
+    },
+    {
+      "id": "mirra-michelada",
+      "name": "Mirra Michelada",
+      "folders": [
+        "restaurants-bars"
+      ],
+      "color": "#D9A24A",
+      "ingredients": [
+        {
+          "name": "Tamarind syrup",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Corn syrup",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Something & Nothing Mandarin",
+          "amount": 1.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Beer for Tacos or Athletic Upside Dawn",
+          "amount": 1.5,
+          "unit": "oz"
+        }
+      ]
     }
   ]
 }
