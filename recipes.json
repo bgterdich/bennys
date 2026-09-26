@@ -2024,7 +2024,7 @@
         }
       ],
       "glass": "Coupe",
-      "special": "Nitro-muddle the basil; fine-strain"
+      "special": "Blender-muddle herbs in the liquor"
     },
     {
       "id": "li-spanish-chris",
@@ -2066,7 +2066,7 @@
         }
       ],
       "glass": "Coupe",
-      "special": "Nitro-muddle the tarragon; fine-strain"
+      "special": "Blender-muddle herbs in the liquor"
     },
     {
       "id": "li-flat-leaf",
@@ -2103,7 +2103,7 @@
         }
       ],
       "glass": "Coupe",
-      "special": "Nitro-muddle the parsley; fine-strain"
+      "special": "Blender-muddle herbs in the liquor"
     },
     {
       "id": "li-carvone",
@@ -2136,7 +2136,7 @@
       ],
       "glass": "Coupe",
       "garnish": "Lemon twist",
-      "special": "Nitro-muddle the mint; fine-strain"
+      "special": "Blender-muddle herbs in the liquor"
     },
     {
       "id": "mirra-michelada",
