@@ -4,7 +4,7 @@
   'use strict';
 
   var app = document.getElementById('app');
-  var data = { folders: [], cocktails: [] };
+  var data = { favorites: [], folders: [], cocktails: [] };
   var dataText = '';
   var count = 1;            // drinks to make; kept while the app is open
   var current = null;       // cocktail on screen, if any
@@ -24,11 +24,11 @@
   function store(key, val) { try { sessionStorage.setItem(key, val); } catch (e) {} }
   function recall(key, fallback) { try { return sessionStorage.getItem(key) || fallback; } catch (e) { return fallback; } }
 
-  // Favorites: recipes.json sets the default; a tap on the star overrides it on this phone.
+  // Favorites: recipes.json lists them in home-screen order; a tap on the star overrides it on this phone.
   function loadFavs() { try { return JSON.parse(localStorage.getItem(FAV_KEY)) || {}; } catch (e) { return {}; } }
   function isFav(c) {
     var f = loadFavs();
-    return Object.prototype.hasOwnProperty.call(f, c.id) ? !!f[c.id] : !!c.favorite;
+    return Object.prototype.hasOwnProperty.call(f, c.id) ? !!f[c.id] : data.favorites.indexOf(c.id) !== -1;
   }
   function toggleFav(c) {
     var f = loadFavs();
@@ -126,7 +126,12 @@
 
   function renderHome() {
     store(BACK_KEY, '#/');
-    var favs = data.cocktails.filter(isFav).sort(byName);
+    // recipes.json order first; anything starred on this phone after, alphabetically
+    var favs = data.cocktails.filter(isFav).sort(function (a, b) {
+      var ia = data.favorites.indexOf(a.id), ib = data.favorites.indexOf(b.id);
+      if (ia === -1 && ib === -1) return byName(a, b);
+      return (ia === -1 ? 1e6 : ia) - (ib === -1 ? 1e6 : ib);
+    });
     var folders = data.folders
       .map(function (f) { return { f: f, n: inFolder(f.id).length }; })
       .filter(function (x) { return x.n > 0; });
@@ -349,7 +354,7 @@
       .then(function (text) {
         if (text === dataText) return;
         var parsed = JSON.parse(text);
-        data = { folders: parsed.folders || [], cocktails: parsed.cocktails || [] };
+        data = { favorites: parsed.favorites || [], folders: parsed.folders || [], cocktails: parsed.cocktails || [] };
         dataText = text;
         // Refresh the screen with new recipes, but never yank a recipe out from under you.
         if (!quiet) route();

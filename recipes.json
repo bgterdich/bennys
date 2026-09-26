@@ -1,4 +1,13 @@
 {
+  "favorites": [
+    "espresso-mar-tiki",
+    "li-classic-daiquiri",
+    "li-thai-basil-daiquiri",
+    "li-old-fashioned",
+    "bens-margarita",
+    "li-vieux-carre",
+    "espresso-martini"
+  ],
   "folders": [
     {
       "id": "bens-recipes",
@@ -45,7 +54,6 @@
     {
       "id": "espresso-mar-tiki",
       "name": "Espresso Mar-tiki",
-      "favorite": true,
       "folders": [
         "coffee"
       ],
@@ -83,7 +91,6 @@
     {
       "id": "espresso-martini",
       "name": "Espresso Martini",
-      "favorite": true,
       "folders": [
         "coffee"
       ],
@@ -116,7 +123,6 @@
     {
       "id": "li-old-fashioned",
       "name": "Old Fashioned",
-      "favorite": true,
       "folders": [
         "li-built"
       ],
@@ -368,7 +374,6 @@
     {
       "id": "li-vieux-carre",
       "name": "Vieux Carré",
-      "favorite": true,
       "folders": [
         "li-stirred"
       ],
@@ -997,7 +1002,6 @@
     {
       "id": "li-classic-daiquiri",
       "name": "Daiquiri",
-      "favorite": true,
       "folders": [
         "li-shaken"
       ],
@@ -1896,7 +1900,6 @@
     {
       "id": "li-thai-basil-daiquiri",
       "name": "TBD: Thai Basil Daiquiri",
-      "favorite": true,
       "folders": [
         "li-special"
       ],
@@ -2098,7 +2101,6 @@
     {
       "id": "bens-margarita",
       "name": "Ben’s Margarita",
-      "favorite": true,
       "folders": [
         "bens-recipes"
       ],

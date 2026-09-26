@@ -9,12 +9,12 @@ A cocktail quick-reference for the phone: big, glanceable ingredient amounts wit
 
 ```json
 {
+  "favorites": ["daiquiri"],             // home-screen favorites, in display order (cocktail ids)
   "folders": [{ "id": "rum", "name": "Rum" }],
   "cocktails": [
     {
       "id": "daiquiri",                 // unique, kebab-case; used in the URL
       "name": "Daiquiri",
-      "favorite": true,                 // shows on the home screen
       "folders": ["rum"],               // folder ids; a cocktail can be in several
       "color": "#E3D9AE",               // small dot on tiles; roughly the drink's color
       "ingredients": [
@@ -36,7 +36,7 @@ A cocktail quick-reference for the phone: big, glanceable ingredient amounts wit
 - A text `amount` (e.g. `"top"`, `"to taste"`) is shown as-is and not multiplied.
 - `glass`, `garnish`, `special`, `notes` are optional and shown below the fold. Keep them pithy.
 - Folders with no cocktails are hidden.
-- Tapping the star in the app overrides `favorite` on that phone only.
+- Tapping the star in the app overrides `favorites` on that phone only; phone-only favorites show after the listed ones.
 
 ## Files
 
