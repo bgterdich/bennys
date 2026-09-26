@@ -2102,6 +2102,37 @@
         }
       ],
       "notes": "Orange soda: ideally Something & Nothing Mandarin. Beer: Beer for Tacos or Athletic Upside Dawn."
+    },
+    {
+      "id": "enchanted-energy",
+      "name": "Enchanted Energy",
+      "folders": [
+        "restaurants-bars"
+      ],
+      "color": "#5A3A22",
+      "ingredients": [
+        {
+          "name": "Averna",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Coffee Meletti",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Pineapple juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Orange bitters",
+          "amount": 2,
+          "unit": "dash"
+        }
+      ],
+      "garnish": "Coffee beans"
     }
   ]
 }
