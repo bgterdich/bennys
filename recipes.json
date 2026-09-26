@@ -1,23 +1,82 @@
 {
   "folders": [
-    { "id": "rum", "name": "Rum" },
-    { "id": "vodka", "name": "Vodka" },
-    { "id": "whiskey", "name": "Whiskey" },
-    { "id": "coffee", "name": "Coffee" }
+    {
+      "id": "rum",
+      "name": "Rum"
+    },
+    {
+      "id": "vodka",
+      "name": "Vodka"
+    },
+    {
+      "id": "whiskey",
+      "name": "Whiskey"
+    },
+    {
+      "id": "coffee",
+      "name": "Coffee"
+    },
+    {
+      "id": "li-built",
+      "name": "LI - Built"
+    },
+    {
+      "id": "li-stirred",
+      "name": "LI - Stirred"
+    },
+    {
+      "id": "li-shaken",
+      "name": "LI - Shaken"
+    },
+    {
+      "id": "li-egg-white",
+      "name": "LI - Egg White"
+    },
+    {
+      "id": "li-blended",
+      "name": "LI - Blended"
+    },
+    {
+      "id": "li-carbonated",
+      "name": "LI - Carbonated"
+    }
   ],
   "cocktails": [
     {
       "id": "espresso-mar-tiki",
       "name": "Espresso Mar-tiki",
       "favorite": true,
-      "folders": ["rum", "coffee"],
+      "folders": [
+        "rum",
+        "coffee"
+      ],
       "color": "#5A3A22",
       "ingredients": [
-        { "name": "Dark rum", "amount": 1.5, "unit": "oz" },
-        { "name": "Licor 43", "amount": 0.25, "unit": "oz" },
-        { "name": "Mr. Black", "amount": 0.5, "unit": "oz" },
-        { "name": "Orgeat", "amount": 0.5, "unit": "oz" },
-        { "name": "Espresso", "amount": 2, "unit": "oz" }
+        {
+          "name": "Dark rum",
+          "amount": 1.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Licor 43",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Mr. Black",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Orgeat",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Espresso",
+          "amount": 2,
+          "unit": "oz"
+        }
       ],
       "glass": "Coupe",
       "garnish": "Coffee beans"
@@ -26,13 +85,32 @@
       "id": "espresso-martini",
       "name": "Espresso Martini",
       "favorite": true,
-      "folders": ["vodka", "coffee"],
+      "folders": [
+        "vodka",
+        "coffee"
+      ],
       "color": "#3B2A20",
       "ingredients": [
-        { "name": "Vodka", "amount": 1, "unit": "oz" },
-        { "name": "Espresso", "amount": 1, "unit": "oz" },
-        { "name": "Mr. Black", "amount": 1, "unit": "oz" },
-        { "name": "Simple syrup", "amount": 0.5, "unit": "oz" }
+        {
+          "name": "Vodka",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Espresso",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Mr. Black",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.5,
+          "unit": "oz"
+        }
       ],
       "glass": "Coupe",
       "garnish": "Coffee beans"
@@ -41,15 +119,1508 @@
       "id": "daiquiri",
       "name": "Daiquiri",
       "favorite": true,
-      "folders": ["rum"],
+      "folders": [
+        "rum"
+      ],
       "color": "#E3D9AE",
       "ingredients": [
-        { "name": "White rum", "amount": 2, "unit": "oz" },
-        { "name": "Lime juice", "amount": 0.75, "unit": "oz" },
-        { "name": "Simple syrup", "amount": 0.75, "unit": "oz" }
+        {
+          "name": "White rum",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.75,
+          "unit": "oz"
+        }
       ],
       "glass": "Coupe",
       "garnish": "Lime wheel"
+    },
+    {
+      "id": "li-old-fashioned",
+      "name": "Old Fashioned",
+      "favorite": true,
+      "folders": [
+        "li-built"
+      ],
+      "color": "#B9722E",
+      "ingredients": [
+        {
+          "name": "Bourbon",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.375,
+          "unit": "oz"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 2,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Old fashioned, large rock",
+      "garnish": "Orange twist"
+    },
+    {
+      "id": "li-widows-kiss",
+      "name": "Widow's Kiss",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#C98A3A",
+      "ingredients": [
+        {
+          "name": "Apple brandy",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Benedictine",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Yellow Chartreuse",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 2,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe"
+    },
+    {
+      "id": "li-de-la-louisiane",
+      "name": "De La Louisiane",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#9C4A2A",
+      "ingredients": [
+        {
+          "name": "Rye",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Benedictine",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Sweet vermouth",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Peychaud's bitters",
+          "amount": 3,
+          "unit": "dash"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 3,
+          "unit": "dash"
+        },
+        {
+          "name": "Absinthe",
+          "amount": 3,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Cherry"
+    },
+    {
+      "id": "li-improved-whiskey-cocktail",
+      "name": "Improved Whiskey Cocktail",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#B7792F",
+      "ingredients": [
+        {
+          "name": "Rye",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Luxardo Maraschino",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 2,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Old fashioned, large rock",
+      "garnish": "Lemon twist",
+      "special": "Rinse glass with absinthe"
+    },
+    {
+      "id": "li-rusty-nail",
+      "name": "Rusty Nail",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#B8742A",
+      "ingredients": [
+        {
+          "name": "Scotch",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Drambuie",
+          "amount": 0.5,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Old fashioned, large rock",
+      "garnish": "Lemon peel"
+    },
+    {
+      "id": "li-manhattan-with-rye",
+      "name": "Manhattan with Rye",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#8E3A22",
+      "ingredients": [
+        {
+          "name": "Rye",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Sweet vermouth",
+          "amount": 0.875,
+          "unit": "oz"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 2,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Cherry or orange twist"
+    },
+    {
+      "id": "li-bijou",
+      "name": "Bijou",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#A8752A",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Sweet vermouth",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Green Chartreuse",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Orange bitters",
+          "amount": 1,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Cherry and lemon twist"
+    },
+    {
+      "id": "li-brooklyn",
+      "name": "Brooklyn",
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#98482A",
+      "ingredients": [
+        {
+          "name": "Rye",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Amer Picon",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Dry vermouth",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Luxardo Maraschino",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 1,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Cherry"
+    },
+    {
+      "id": "li-vieux-carre",
+      "name": "Vieux Carré",
+      "favorite": true,
+      "folders": [
+        "li-stirred"
+      ],
+      "color": "#9A4F25",
+      "ingredients": [
+        {
+          "name": "Rye",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Cognac",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Sweet vermouth",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Benedictine",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 1,
+          "unit": "dash"
+        },
+        {
+          "name": "Peychaud's bitters",
+          "amount": 1,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Old fashioned, large rock"
+    },
+    {
+      "id": "li-between-the-sheets",
+      "name": "Between the Sheets",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#E2B866",
+      "ingredients": [
+        {
+          "name": "Cognac",
+          "amount": 1.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Curaçao",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "White rum",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.5,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Lemon twist (discarded)"
+    },
+    {
+      "id": "li-last-word",
+      "name": "Last Word",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#B9C86A",
+      "ingredients": [
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Green Chartreuse",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Luxardo Maraschino",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Plymouth gin",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 2,
+          "unit": "drop"
+        }
+      ],
+      "glass": "Coupe"
+    },
+    {
+      "id": "li-champs-elysees",
+      "name": "Champs-Élysées",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#D9B45C",
+      "ingredients": [
+        {
+          "name": "Cognac",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Green Chartreuse",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 1,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Lemon twist (discarded)"
+    },
+    {
+      "id": "li-sidecar",
+      "name": "Sidecar",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#E0A64A",
+      "ingredients": [
+        {
+          "name": "Cognac",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Cointreau",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.25,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Orange twist (discarded)"
+    },
+    {
+      "id": "li-aviation",
+      "name": "Aviation",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#B9B4D6",
+      "ingredients": [
+        {
+          "name": "Plymouth gin",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Luxardo Maraschino",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Crème de violette",
+          "amount": 0.25,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe"
+    },
+    {
+      "id": "li-margarita",
+      "name": "Margarita",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#C9D46A",
+      "ingredients": [
+        {
+          "name": "Blanco tequila",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Cointreau",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 5,
+          "unit": "drop"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Salted rim (optional)"
+    },
+    {
+      "id": "li-jack-rose",
+      "name": "Jack Rose",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#D9707A",
+      "ingredients": [
+        {
+          "name": "Apple brandy",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Grenadine",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Angostura bitters",
+          "amount": 1,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe"
+    },
+    {
+      "id": "li-corpse-reviver-2",
+      "name": "Corpse Reviver #2",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#E6DDB0",
+      "ingredients": [
+        {
+          "name": "Lemon juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Gin",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Cointreau",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Lillet Blanc",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Absinthe or Pernod",
+          "amount": 3,
+          "unit": "dash"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Orange twist (discarded)"
+    },
+    {
+      "id": "li-fresh-lime-gimlet",
+      "name": "Fresh Lime Gimlet",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#D3DDA0",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.75,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Lime wheel"
+    },
+    {
+      "id": "li-20th-century",
+      "name": "20th-Century Cocktail",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#E8DFBE",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "amount": 1.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "White crème de cacao",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Lillet Blanc",
+          "amount": 0.75,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe"
+    },
+    {
+      "id": "li-bees-knees",
+      "name": "Bee's Knees",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#E8CF7A",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Honey syrup",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.75,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Lemon wheel"
+    },
+    {
+      "id": "li-southside",
+      "name": "Southside",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#B5D08A",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Mint leaves",
+          "amount": "handful"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Mint"
+    },
+    {
+      "id": "li-gold-rush",
+      "name": "Gold Rush",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#DDB25A",
+      "ingredients": [
+        {
+          "name": "Bourbon",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Honey syrup",
+          "amount": 0.75,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Old fashioned, large rock"
+    },
+    {
+      "id": "li-cosmopolitan",
+      "name": "Cosmopolitan",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#E07A8A",
+      "ingredients": [
+        {
+          "name": "Absolut Citron vodka",
+          "amount": 1.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Cointreau",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Cranberry juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.5,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Orange twist (discarded)"
+    },
+    {
+      "id": "li-cosmopolitan-tc",
+      "name": "Cosmopolitan TC",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#E58B96",
+      "ingredients": [
+        {
+          "name": "Absolut Citron vodka",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Cointreau",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Cranberry juice",
+          "amount": 0.5,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Orange twist"
+    },
+    {
+      "id": "li-brown-derby",
+      "name": "Brown Derby",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#C98B4A",
+      "ingredients": [
+        {
+          "name": "Bourbon",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Grapefruit juice",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Honey syrup",
+          "amount": 0.5,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Grapefruit twist (discarded)"
+    },
+    {
+      "id": "li-hemingway-daiquiri",
+      "name": "Hemingway Daiquiri",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#EAD9B0",
+      "ingredients": [
+        {
+          "name": "White rum",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Grapefruit juice",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Luxardo Maraschino",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 2,
+          "unit": "drop"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Lime wheel"
+    },
+    {
+      "id": "li-alexander",
+      "name": "Alexander",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#E9DCC4",
+      "ingredients": [
+        {
+          "name": "Cognac",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Heavy cream",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Demerara syrup",
+          "amount": 0.25,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Grated nutmeg"
+    },
+    {
+      "id": "li-blood-and-sand",
+      "name": "Blood and Sand",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#B5452F",
+      "ingredients": [
+        {
+          "name": "Scotch",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Cherry Heering",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Sweet vermouth",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Orange juice",
+          "amount": 0.5,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Orange twist"
+    },
+    {
+      "id": "li-classic-daiquiri",
+      "name": "Classic Daiquiri",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#E3D9AE",
+      "ingredients": [
+        {
+          "name": "White rum",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.75,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe"
+    },
+    {
+      "id": "li-honeysuckle",
+      "name": "Honeysuckle",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#E6D39A",
+      "ingredients": [
+        {
+          "name": "White rum",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Honey syrup",
+          "amount": 0.75,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Lime wheel"
+    },
+    {
+      "id": "li-daiquiri-more-lime",
+      "name": "Daiquiri (More Lime)",
+      "folders": [
+        "li-shaken"
+      ],
+      "color": "#DDE0AE",
+      "ingredients": [
+        {
+          "name": "White rum",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.875,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.75,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe"
+    },
+    {
+      "id": "li-whiskey-sour",
+      "name": "Whiskey Sour",
+      "folders": [
+        "li-egg-white"
+      ],
+      "color": "#E8C77A",
+      "ingredients": [
+        {
+          "name": "Rye",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.625,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 2,
+          "unit": "drop"
+        },
+        {
+          "name": "Egg white",
+          "amount": 1,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "special": "Dry shake (no ice) first"
+    },
+    {
+      "id": "li-clover-club",
+      "name": "Clover Club",
+      "folders": [
+        "li-egg-white"
+      ],
+      "color": "#E59AA8",
+      "ingredients": [
+        {
+          "name": "Plymouth gin",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Egg white",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Dolin dry vermouth",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Raspberry syrup",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.5,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "Raspberry",
+      "special": "Dry shake (no ice) first"
+    },
+    {
+      "id": "li-pink-lady",
+      "name": "Pink Lady",
+      "folders": [
+        "li-egg-white"
+      ],
+      "color": "#EDB3BC",
+      "ingredients": [
+        {
+          "name": "Plymouth gin",
+          "amount": 1.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Egg white",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Grenadine",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Lairds Applejack Bottled in Bond",
+          "amount": 0.5,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "special": "Dry shake (no ice) first"
+    },
+    {
+      "id": "li-pisco-sour",
+      "name": "Pisco Sour",
+      "folders": [
+        "li-egg-white"
+      ],
+      "color": "#EFE6C0",
+      "ingredients": [
+        {
+          "name": "Pisco",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Egg white",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.75,
+          "unit": "oz"
+        }
+      ],
+      "glass": "Coupe",
+      "garnish": "3 drops Angostura bitters (or Amargo Chuncho)",
+      "special": "Dry shake (no ice) first"
+    },
+    {
+      "id": "li-blender-whiskey-sour",
+      "name": "Blender Whiskey Sour",
+      "folders": [
+        "li-blended"
+      ],
+      "color": "#E6C47A",
+      "ingredients": [
+        {
+          "name": "Water",
+          "amount": 2.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Sugared 100-proof rye",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Orange juice",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 4,
+          "unit": "drop"
+        }
+      ],
+      "glass": "Coupe",
+      "special": "Blend with 120 g ice; strain out large chunks"
+    },
+    {
+      "id": "li-blender-margarita",
+      "name": "Blender Margarita",
+      "folders": [
+        "li-blended"
+      ],
+      "color": "#D6DC8E",
+      "ingredients": [
+        {
+          "name": "Water",
+          "amount": 2.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Cointreau",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "White mezcal",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Yellow Chartreuse",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Hellfire bitters",
+          "amount": 10,
+          "unit": "drop"
+        }
+      ],
+      "glass": "Coupe",
+      "special": "Blend with 120 g ice; strain out large chunks"
+    },
+    {
+      "id": "li-blender-daiquiri",
+      "name": "Blender Daiquiri",
+      "folders": [
+        "li-blended"
+      ],
+      "color": "#E8E2BE",
+      "ingredients": [
+        {
+          "name": "Water",
+          "amount": 2.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Sugared 80-proof rum",
+          "amount": 2.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 4,
+          "unit": "drop"
+        }
+      ],
+      "glass": "Coupe",
+      "special": "Blend with 120 g ice; strain out large chunks"
+    },
+    {
+      "id": "li-chartruth",
+      "name": "Chartruth",
+      "folders": [
+        "li-carbonated"
+      ],
+      "color": "#B7CC6A",
+      "ingredients": [
+        {
+          "name": "Water",
+          "amount": 3.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Green Chartreuse",
+          "amount": 1.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Clarified lime juice",
+          "amount": 0.5,
+          "unit": "oz"
+        }
+      ],
+      "special": "Chill and carbonate"
+    },
+    {
+      "id": "li-gin-and-juice-agar",
+      "name": "Gin and Juice, Agar Clarified",
+      "folders": [
+        "li-carbonated"
+      ],
+      "color": "#EAD6B8",
+      "ingredients": [
+        {
+          "name": "Agar-clarified grapefruit juice",
+          "amount": 2.625,
+          "unit": "oz"
+        },
+        {
+          "name": "Gin",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Water",
+          "amount": 0.875,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 2,
+          "unit": "drop"
+        }
+      ],
+      "special": "Chill and carbonate"
+    },
+    {
+      "id": "li-gin-and-juice-centrifuge",
+      "name": "Gin and Juice, Centrifuge Clarified",
+      "folders": [
+        "li-carbonated"
+      ],
+      "color": "#EAD2B0",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "amount": 1.875,
+          "unit": "oz"
+        },
+        {
+          "name": "Centrifuge-clarified grapefruit juice",
+          "amount": 1.875,
+          "unit": "oz"
+        },
+        {
+          "name": "Water",
+          "amount": 1.375,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.375,
+          "unit": "oz"
+        },
+        {
+          "name": "Champagne acid",
+          "amount": 4,
+          "unit": "dash"
+        }
+      ],
+      "special": "Chill and carbonate"
+    },
+    {
+      "id": "li-carbonated-negroni",
+      "name": "Carbonated Negroni",
+      "folders": [
+        "li-carbonated"
+      ],
+      "color": "#C23A2C",
+      "ingredients": [
+        {
+          "name": "Water",
+          "amount": 2.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Sweet vermouth",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Gin",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Campari",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Clarified lime juice or champagne acid",
+          "amount": 0.25,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 2,
+          "unit": "drop"
+        }
+      ],
+      "garnish": "Grapefruit twist (discarded)",
+      "special": "Chill and carbonate"
+    },
+    {
+      "id": "li-gin-and-tonic-dry",
+      "name": "Gin and Tonic (Dry)",
+      "folders": [
+        "li-carbonated"
+      ],
+      "color": "#E4EAD8",
+      "ingredients": [
+        {
+          "name": "Water",
+          "amount": 2.875,
+          "unit": "oz"
+        },
+        {
+          "name": "Gin",
+          "amount": 1.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Quinine simple syrup",
+          "amount": 0.375,
+          "unit": "oz"
+        },
+        {
+          "name": "Clarified lime juice",
+          "amount": 0.375,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 2,
+          "unit": "drop"
+        }
+      ],
+      "special": "Chill and carbonate"
+    },
+    {
+      "id": "li-carbonated-whiskey-sour",
+      "name": "Carbonated Whiskey Sour",
+      "folders": [
+        "li-carbonated"
+      ],
+      "color": "#E3C27A",
+      "ingredients": [
+        {
+          "name": "Water",
+          "amount": 2.625,
+          "unit": "oz"
+        },
+        {
+          "name": "Bourbon",
+          "amount": 1.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.625,
+          "unit": "oz"
+        },
+        {
+          "name": "Clarified lemon juice",
+          "amount": 0.375,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 2,
+          "unit": "drop"
+        }
+      ],
+      "special": "Chill and carbonate"
+    },
+    {
+      "id": "li-carbonated-margarita",
+      "name": "Carbonated Margarita",
+      "folders": [
+        "li-carbonated"
+      ],
+      "color": "#D2DA8C",
+      "ingredients": [
+        {
+          "name": "Water",
+          "amount": 2.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Blanco tequila",
+          "amount": 2,
+          "unit": "oz"
+        },
+        {
+          "name": "Simple syrup",
+          "amount": 0.625,
+          "unit": "oz"
+        },
+        {
+          "name": "Clarified lime juice",
+          "amount": 0.375,
+          "unit": "oz"
+        },
+        {
+          "name": "Saline solution",
+          "amount": 4,
+          "unit": "drop"
+        }
+      ],
+      "special": "Chill and carbonate"
     }
   ]
 }
