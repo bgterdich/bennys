@@ -1,0 +1,55 @@
+{
+  "folders": [
+    { "id": "rum", "name": "Rum" },
+    { "id": "vodka", "name": "Vodka" },
+    { "id": "whiskey", "name": "Whiskey" },
+    { "id": "coffee", "name": "Coffee" }
+  ],
+  "cocktails": [
+    {
+      "id": "espresso-mar-tiki",
+      "name": "Espresso Mar-tiki",
+      "favorite": true,
+      "folders": ["rum", "coffee"],
+      "color": "#5A3A22",
+      "ingredients": [
+        { "name": "Dark rum", "amount": 1.5, "unit": "oz" },
+        { "name": "Licor 43", "amount": 0.25, "unit": "oz" },
+        { "name": "Mr. Black", "amount": 0.5, "unit": "oz" },
+        { "name": "Orgeat", "amount": 0.5, "unit": "oz" },
+        { "name": "Espresso", "amount": 2, "unit": "oz" }
+      ],
+      "glass": "Coupe",
+      "garnish": "Coffee beans"
+    },
+    {
+      "id": "espresso-martini",
+      "name": "Espresso Martini",
+      "favorite": true,
+      "folders": ["vodka", "coffee"],
+      "color": "#3B2A20",
+      "ingredients": [
+        { "name": "Vodka", "amount": 1, "unit": "oz" },
+        { "name": "Espresso", "amount": 1, "unit": "oz" },
+        { "name": "Mr. Black", "amount": 1, "unit": "oz" },
+        { "name": "Simple syrup", "amount": 0.5, "unit": "oz" }
+      ],
+      "glass": "Coupe",
+      "garnish": "Coffee beans"
+    },
+    {
+      "id": "daiquiri",
+      "name": "Daiquiri",
+      "favorite": true,
+      "folders": ["rum"],
+      "color": "#E3D9AE",
+      "ingredients": [
+        { "name": "White rum", "amount": 2, "unit": "oz" },
+        { "name": "Lime juice", "amount": 0.75, "unit": "oz" },
+        { "name": "Simple syrup", "amount": 0.75, "unit": "oz" }
+      ],
+      "glass": "Coupe",
+      "garnish": "Lime wheel"
+    }
+  ]
+}
