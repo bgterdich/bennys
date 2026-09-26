@@ -252,7 +252,7 @@
 
   // ---------- routing & events ----------
 
-  function route() {
+  function route(from) {
     current = null;
     releaseWake();
     var parts = location.hash.replace(/^#\/?/, '').split('/');
@@ -262,7 +262,9 @@
     else if (parts[0] === 'all') renderList('All cocktails', data.cocktails.slice().sort(byName), '#/all');
     else if (parts[0] === 'search') renderSearch();
     else renderHome();
-    window.scrollTo(0, 0);
+    // Coming back from a cocktail: return to where you were in the list.
+    var here = norm(location.hash);
+    window.scrollTo(0, /^#\/c\//.test(from || '') && scrollPos[here] ? scrollPos[here] : 0);
   }
 
   app.addEventListener('click', function (e) {
@@ -285,7 +287,14 @@
     }
   });
 
-  window.addEventListener('hashchange', route);
+  var scrollPos = {};
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  function norm(h) { return !h || h === '#' || h === '#/' ? '#/' : h; }
+  window.addEventListener('hashchange', function (e) {
+    var from = norm(e.oldURL.indexOf('#') === -1 ? '' : e.oldURL.slice(e.oldURL.indexOf('#')));
+    scrollPos[from] = window.scrollY;   // the old screen is still showing here
+    route(from);
+  });
 
   document.addEventListener('visibilitychange', function () {
     if (document.visibilityState !== 'visible') return;
@@ -304,7 +313,8 @@
         data = { folders: parsed.folders || [], cocktails: parsed.cocktails || [] };
         dataText = text;
         // Refresh the screen with new recipes, but never yank a recipe out from under you.
-        if (!quiet || !current) route();
+        if (!quiet) route();
+        else if (!current) { var y = window.scrollY; route(); window.scrollTo(0, y); }
       })
       .catch(function (err) {
         if (quiet) return;

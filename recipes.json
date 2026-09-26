@@ -1937,6 +1937,7 @@
     {
       "id": "li-thai-basil-daiquiri",
       "name": "TBD: Thai Basil Daiquiri",
+      "favorite": true,
       "folders": [
         "li-special"
       ],
@@ -2132,7 +2133,38 @@
           "unit": "dash"
         }
       ],
-      "garnish": "Coffee beans"
+      "garnish": "Coffee beans",
+      "notes": "Possibly from Lula Cafe or a place nearby"
+    },
+    {
+      "id": "bens-margarita",
+      "name": "Ben’s Margarita",
+      "favorite": true,
+      "folders": [
+        "bens-recipes"
+      ],
+      "color": "#C9D46A",
+      "ingredients": [
+        {
+          "name": "Tequila",
+          "amount": 1.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Grand Marnier",
+          "amount": 1,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Agave",
+          "amount": "squeeze"
+        }
+      ]
     }
   ]
 }
