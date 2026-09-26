@@ -213,7 +213,8 @@
         '<span class="col-small">1 drink</span></div>' : '') +
       (c.ingredients || []).map(function (ing) {
         return '<div class="ing"><div class="ing-name">' + esc(ing.name) + '</div>' +
-          amountHTML(ing, count, 'big') + (batch ? amountHTML(ing, 1, 'small') : '') + '</div>';
+          amountHTML(ing, count, 'big') +
+          (batch ? (typeof ing.amount === 'number' ? amountHTML(ing, 1, 'small') : '<span class="amt small"></span>') : '') + '</div>';
       }).join('');
     var pills = [1, 2, 3, 4].map(function (k) {
       return '<button class="pill" data-n="' + k + '" aria-pressed="' + (count === k) + '" aria-label="Make ' + k +

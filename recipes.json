@@ -508,11 +508,6 @@
           "name": "Plymouth gin",
           "amount": 0.75,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 2,
-          "unit": "drop"
         }
       ],
       "glass": "Coupe"
@@ -644,11 +639,6 @@
           "name": "Simple syrup",
           "amount": 0.25,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 5,
-          "unit": "drop"
         }
       ],
       "glass": "Coupe",
@@ -982,11 +972,6 @@
           "name": "Luxardo Maraschino",
           "amount": 0.5,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 2,
-          "unit": "drop"
         }
       ],
       "glass": "Coupe",
@@ -1154,11 +1139,6 @@
           "unit": "oz"
         },
         {
-          "name": "Saline solution",
-          "amount": 2,
-          "unit": "drop"
-        },
-        {
           "name": "Egg white",
           "amount": 1,
           "unit": "oz"
@@ -1307,11 +1287,6 @@
           "name": "Orange juice",
           "amount": 0.25,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 4,
-          "unit": "drop"
         }
       ],
       "glass": "Coupe",
@@ -1381,11 +1356,6 @@
           "name": "Lime juice",
           "amount": 0.5,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 4,
-          "unit": "drop"
         }
       ],
       "glass": "Coupe",
@@ -1439,11 +1409,6 @@
           "name": "Water",
           "amount": 0.875,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 2,
-          "unit": "drop"
         }
       ],
       "special": "Chill and carbonate"
@@ -1516,11 +1481,6 @@
           "name": "Clarified lime juice or champagne acid",
           "amount": 0.25,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 2,
-          "unit": "drop"
         }
       ],
       "garnish": "Grapefruit twist (discarded)",
@@ -1553,11 +1513,6 @@
           "name": "Clarified lime juice",
           "amount": 0.375,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 2,
-          "unit": "drop"
         }
       ],
       "special": "Chill and carbonate"
@@ -1589,11 +1544,6 @@
           "name": "Clarified lemon juice",
           "amount": 0.375,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 2,
-          "unit": "drop"
         }
       ],
       "special": "Chill and carbonate"
@@ -1625,11 +1575,6 @@
           "name": "Clarified lime juice",
           "amount": 0.375,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 4,
-          "unit": "drop"
         }
       ],
       "special": "Chill and carbonate"
@@ -2016,11 +1961,6 @@
           "name": "Simple syrup",
           "amount": 0.667,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 2,
-          "unit": "drop"
         }
       ],
       "glass": "Coupe",
@@ -2058,11 +1998,6 @@
           "name": "Simple syrup",
           "amount": 0.5,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 3,
-          "unit": "drop"
         }
       ],
       "glass": "Coupe",
@@ -2095,11 +2030,6 @@
           "name": "Simple syrup",
           "amount": 0.5,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 3,
-          "unit": "drop"
         }
       ],
       "glass": "Coupe",
@@ -2127,11 +2057,6 @@
           "name": "Simple syrup",
           "amount": 0.44,
           "unit": "oz"
-        },
-        {
-          "name": "Saline solution",
-          "amount": 3,
-          "unit": "drop"
         }
       ],
       "glass": "Coupe",
