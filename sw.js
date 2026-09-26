@@ -21,8 +21,10 @@ self.addEventListener('activate', function (e) {
 self.addEventListener('fetch', function (e) {
   var req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
+  // no-cache: always ask the server whether there's something newer (the phone's
+  // HTTP cache would otherwise serve a copy up to 10 minutes old).
   e.respondWith(
-    fetch(req).then(function (res) {
+    fetch(req.url, { cache: 'no-cache', credentials: 'same-origin' }).then(function (res) {
       if (res.ok) {
         var copy = res.clone();
         caches.open(CACHE).then(function (c) { c.put(req, copy); });
