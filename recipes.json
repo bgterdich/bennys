@@ -1,16 +1,12 @@
 {
   "folders": [
     {
-      "id": "rum",
-      "name": "Rum"
+      "id": "bens-recipes",
+      "name": "Ben’s Recipes"
     },
     {
-      "id": "vodka",
-      "name": "Vodka"
-    },
-    {
-      "id": "whiskey",
-      "name": "Whiskey"
+      "id": "restaurants-bars",
+      "name": "Restaurants/Bars"
     },
     {
       "id": "coffee",
@@ -41,16 +37,8 @@
       "name": "LI - Carbonated"
     },
     {
-      "id": "bens-recipes",
-      "name": "Ben’s Recipes"
-    },
-    {
       "id": "li-special",
       "name": "LI - Special"
-    },
-    {
-      "id": "restaurants-bars",
-      "name": "Restaurants/Bars"
     }
   ],
   "cocktails": [
@@ -59,7 +47,6 @@
       "name": "Espresso Mar-tiki",
       "favorite": true,
       "folders": [
-        "rum",
         "coffee"
       ],
       "color": "#5A3A22",
@@ -98,7 +85,6 @@
       "name": "Espresso Martini",
       "favorite": true,
       "folders": [
-        "vodka",
         "coffee"
       ],
       "color": "#3B2A20",
@@ -132,7 +118,7 @@
       "name": "Daiquiri",
       "favorite": true,
       "folders": [
-        "rum"
+        "bens-recipes"
       ],
       "color": "#E3D9AE",
       "ingredients": [

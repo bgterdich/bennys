@@ -147,7 +147,7 @@
     store(BACK_KEY, here);
     app.innerHTML =
       '<div class="page" style="gap:20px">' +
-      '<a class="back-link" href="#/">' + ICON.back + 'Benny’s</a>' +
+      '<a class="back-link" href="#/" data-up>' + ICON.back + 'Benny’s</a>' +
       '<div class="list-head"><h1 class="list-title">' + esc(title) + '</h1>' +
       '<p class="list-count">' + items.length + (items.length === 1 ? ' cocktail' : ' cocktails') + '</p></div>' +
       (items.length ? '<ul class="clist">' + items.map(listItem).join('') + '</ul>' : '<p class="empty">Nothing here yet.</p>') +
@@ -164,7 +164,7 @@
     store(BACK_KEY, '#/search');
     app.innerHTML =
       '<div class="page" style="gap:20px">' +
-      '<a class="back-link" href="#/">' + ICON.back + 'Benny’s</a>' +
+      '<a class="back-link" href="#/" data-up>' + ICON.back + 'Benny’s</a>' +
       '<input class="search" id="q" type="search" placeholder="Search cocktails or ingredients" aria-label="Search cocktails or ingredients" autocomplete="off">' +
       '<ul class="clist" id="results"></ul></div>';
     var q = document.getElementById('q'), results = document.getElementById('results');
@@ -191,7 +191,7 @@
       .filter(function (d) { return d[1]; });
     app.innerHTML =
       '<div class="fold">' +
-      '<div class="top"><a class="icon-btn" href="' + esc(recall(BACK_KEY, '#/')) + '" aria-label="Back">' + ICON.back + '</a>' +
+      '<div class="top"><a class="icon-btn" href="' + esc(recall(BACK_KEY, '#/')) + '" aria-label="Back" data-up>' + ICON.back + '</a>' +
       '<button class="icon-btn" id="fav" aria-label="Favorite" aria-pressed="' + fav + '" style="color:' + (fav ? 'var(--star)' : 'var(--text)') + '">' +
       star(fav, 20) + '</button></div>' +
       '<h1 class="c-title">' + esc(c.name) + '</h1>' +
@@ -251,8 +251,19 @@
   }
 
   // ---------- routing & events ----------
+  // History mirrors the hierarchy: going into something pushes one step, going back
+  // (button or edge swipe) pops one. Forward navigation is refused, so swiping can
+  // never jump sideways or past the home screen.
 
-  function route(from) {
+  var idx = 0;              // this screen's position in the history stack
+  var shown = '#/';         // hash of the screen currently rendered
+  var scrollPos = {};       // list scroll positions, restored on the way back
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+  function norm(h) { return !h || h === '#' || h === '#/' ? '#/' : h; }
+  function mark(i) { return { bennys: 1, i: i }; }
+
+  function route(restore) {
     current = null;
     releaseWake();
     var parts = location.hash.replace(/^#\/?/, '').split('/');
@@ -262,10 +273,47 @@
     else if (parts[0] === 'all') renderList('All cocktails', data.cocktails.slice().sort(byName), '#/all');
     else if (parts[0] === 'search') renderSearch();
     else renderHome();
-    // Coming back from a cocktail: return to where you were in the list.
-    var here = norm(location.hash);
-    window.scrollTo(0, /^#\/c\//.test(from || '') && scrollPos[here] ? scrollPos[here] : 0);
+    shown = norm(location.hash);
+    window.scrollTo(0, restore ? scrollPos[shown] || 0 : 0);
   }
+
+  function goDown(target) {
+    scrollPos[shown] = window.scrollY;
+    idx += 1;
+    history.pushState(mark(idx), '', target);
+    route(false);
+  }
+  function goUp(fallback) {
+    if (idx > 0) { history.back(); return; }
+    history.replaceState(mark(0), '', fallback);
+    route(false);
+  }
+
+  window.addEventListener('popstate', function (e) {
+    var i = e.state && e.state.bennys ? e.state.i : null;
+    if (i === null) { idx += 1; history.replaceState(mark(idx), '', location.hash || '#/'); route(false); return; }
+    if (i > idx) { history.go(idx - i); return; }   // no forward swipes
+    if (i === idx) return;
+    scrollPos[shown] = window.scrollY;
+    idx = i;
+    route(true);
+  });
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    e.preventDefault();
+    if (a.hasAttribute('data-up')) goUp(a.getAttribute('href'));
+    else goDown(a.getAttribute('href'));
+  });
+
+  // Start: home is always the bottom of the stack.
+  (function initHistory() {
+    if (history.state && history.state.bennys) { idx = history.state.i; return; }
+    var start = norm(location.hash);
+    history.replaceState(mark(0), '', '#/');
+    if (start !== '#/') { idx = 1; history.pushState(mark(1), '', start); }
+  })();
 
   app.addEventListener('click', function (e) {
     var t = e.target.closest('[data-n], [data-more], [data-close], #fav');
@@ -285,15 +333,6 @@
       closeSheet();
       drawAmounts();
     }
-  });
-
-  var scrollPos = {};
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  function norm(h) { return !h || h === '#' || h === '#/' ? '#/' : h; }
-  window.addEventListener('hashchange', function (e) {
-    var from = norm(e.oldURL.indexOf('#') === -1 ? '' : e.oldURL.slice(e.oldURL.indexOf('#')));
-    scrollPos[from] = window.scrollY;   // the old screen is still showing here
-    route(from);
   });
 
   document.addEventListener('visibilitychange', function () {
