@@ -86,6 +86,8 @@
 
   // ---------- icons ----------
 
+  // The app icon's pixel cherry and ice cube, beside the title.
+  var DECO = '<img class="title-deco" src="icons/title-deco.svg" alt="">';
   var ICON = {
     back: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>',
     chev: '<svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>',
@@ -137,7 +139,7 @@
       .filter(function (x) { return x.n > 0; });
     app.innerHTML =
       '<div class="page">' +
-      '<header class="top"><h1 class="page-title">Benny’s</h1>' +
+      '<header class="top"><div class="brand"><h1 class="page-title">Benny’s</h1>' + DECO + '</div>' +
       '<a class="icon-btn" href="#/search" aria-label="Search">' + ICON.search + '</a></header>' +
       (favs.length ? '<section class="section"><h2 class="label">Favorites</h2><div class="tiles">' +
         favs.map(tile).join('') + '</div></section>' : '') +
@@ -362,7 +364,7 @@
       })
       .catch(function (err) {
         if (quiet) return;
-        app.innerHTML = '<div class="page"><h1 class="page-title">Benny’s</h1>' +
+        app.innerHTML = '<div class="page"><div class="brand"><h1 class="page-title">Benny’s</h1>' + DECO + '</div>' +
           '<p class="empty">Couldn’t load recipes (' + esc(err.message) + '). Check your connection and reopen.</p></div>';
       });
   }

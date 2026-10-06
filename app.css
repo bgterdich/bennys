@@ -37,6 +37,9 @@ main { max-width: 520px; margin: 0 auto; }
 
 /* Shared bits */
 .top { display: flex; justify-content: space-between; align-items: center; min-height: 44px; }
+/* Title + the app icon's pixel cherry and ice cube (icons/title-deco.svg), kept outside the h1 so sparkle.js's dance doesn't wipe them. */
+.brand { display: flex; align-items: flex-start; gap: 3px; }
+.title-deco { height: 34px; width: auto; margin-top: -5px; opacity: 0.9; }
 .page-title { margin: 0; font-size: 46px; line-height: 1; font-weight: 200; letter-spacing: -0.01em; }
 .icon-btn { width: 44px; height: 44px; border-radius: 22px; border: 0; padding: 0; background: var(--chip); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .label { margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #6E6E6E; }

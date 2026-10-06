@@ -1,9 +1,9 @@
 // Network first, so new recipes and app updates show up right away;
 // falls back to the cached copy when there's no connection.
-var CACHE = 'bennys-v1';
+var CACHE = 'bennys-v2';
 var ASSETS = [
   './', 'index.html', 'app.css', 'app.js', 'sparkle.js', 'recipes.json', 'manifest.webmanifest',
-  'icons/icon-180.png', 'icons/icon-192.png', 'icons/icon-512.png',
+  'icons/icon-180.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/title-deco.svg',
   'fonts/bai-jamjuree-200.woff2', 'fonts/bai-jamjuree-300.woff2', 'fonts/bai-jamjuree-400.woff2',
   'fonts/bai-jamjuree-500.woff2', 'fonts/bai-jamjuree-600.woff2'
 ];
