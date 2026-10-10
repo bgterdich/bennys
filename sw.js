@@ -1,6 +1,6 @@
 // Network first, so new recipes and app updates show up right away;
 // falls back to the cached copy when there's no connection.
-var CACHE = 'bennys-v3';
+var CACHE = 'bennys-v4';
 var ASSETS = [
   './', 'index.html', 'app.css', 'app.js', 'sparkle.js', 'recipes.json', 'manifest.webmanifest',
   'icons/icon-180.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/title-deco.svg',
