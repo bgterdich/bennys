@@ -38,6 +38,10 @@ A cocktail quick-reference for the phone: big, glanceable ingredient amounts wit
 - Folders with no cocktails are hidden.
 - Tapping the star in the app overrides `favorites` on that phone only; phone-only favorites show after the listed ones.
 
+## Party planner
+
+**Plan party** (bottom of the home screen) makes a named party: pick cocktails (from the library, or new ones typed in, which stay with that party), optionally say how many of each, tick ingredients on hand, then a shopping list to tick off or copy. Same ingredient names are combined across cocktails; totals show once each cocktail using an ingredient has a count; lime/lemon juice also shows a rough fruit count (≈1 oz per lime, 1.5 oz per lemon). Parties are saved on that phone only (`localStorage` key `bennys.parties`), not in `recipes.json`.
+
 ## Files
 
 `index.html`, `app.css`, `app.js` (the app, no build step) · `sparkle.js` (tap the title for a burst of color) · `sw.js` (offline support) · `manifest.webmanifest`, `icons/` (home-screen app) · `fonts/` (Bai Jamjuree, OFL).
