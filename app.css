@@ -117,3 +117,63 @@ main { max-width: 520px; margin: 0 auto; }
 .choices { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .choice { height: 60px; border-radius: 16px; border: 0; padding: 0; background: #F2F2F0; font-size: 24px; font-weight: 500; }
 .choice[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+
+/* Party planner */
+.pp-entry { display: flex; justify-content: center; margin-top: 8px; }
+.pp-link { font-size: 14px; font-weight: 500; color: var(--faint); padding: 8px 16px; border-radius: 18px; border: 1px solid var(--line); }
+.pp-new { display: flex; gap: 10px; }
+.pp-new .search { flex: 1; min-width: 0; }
+.pp-btn { height: 44px; padding: 0 18px; border-radius: 22px; border: 0; background: var(--chip); font-size: 16px; font-weight: 500; flex-shrink: 0; }
+.pp-btn.primary { background: var(--accent); color: var(--on-accent); }
+.pp-btn.quiet { background: none; color: var(--muted); padding: 0 6px; }
+.pp-new .pp-btn { height: 52px; border-radius: 16px; }
+.pp-next { height: 52px; border-radius: 16px; }
+.pp-add { align-self: flex-start; }
+.pp-title { margin-top: -8px; font-size: 44px; line-height: 1.05; overflow-wrap: anywhere; }
+.pp-tabs { display: flex; gap: 4px; padding: 4px; border-radius: 16px; background: var(--chip); }
+.pp-tab { flex: 1; min-width: 0; height: 40px; padding: 0 4px; border: 0; border-radius: 12px; background: transparent; font-size: 15px; font-weight: 500; color: var(--muted); }
+.pp-tab[aria-selected="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
+.pp-tab .n { margin-left: 5px; color: var(--faint); font-weight: 400; }
+.pp-body { display: flex; flex-direction: column; gap: 22px; }
+.pp-sec { display: flex; flex-direction: column; gap: 10px; }
+.pp-note { margin: 0; font-size: 14px; line-height: 1.35; color: var(--muted); }
+.pp-pad { padding: 14px 0; }
+
+.pp-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.pp-chip { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 0 12px 0 14px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); font-size: 15px; font-weight: 500; }
+.pp-chip svg { color: var(--faint); flex-shrink: 0; }
+
+.pp-list { margin: 0; padding: 0; list-style: none; border-bottom: 1px solid var(--line); }
+.pp-row { display: flex; align-items: center; border-top: 1px solid var(--line); }
+.pp-item { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 12px 0; border: 0; background: none; text-align: left; }
+.pp-check { width: 24px; height: 24px; flex-shrink: 0; }
+.pp-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.pp-name { font-size: 18px; line-height: 1.2; font-weight: 500; }
+.pp-sub { font-size: 13px; line-height: 1.3; color: var(--muted); }
+.pp-list#pp-list .pp-sub { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pp-qty { flex-shrink: 0; max-width: 46%; text-align: right; font-size: 18px; font-weight: 400; }
+.pp-item.done .pp-name { color: var(--faint); text-decoration: line-through; }
+.pp-item.done .pp-qty, .pp-item.done .pp-sub { color: var(--faint); }
+.pp-edit { flex-shrink: 0; border: 0; background: none; color: var(--muted); font-size: 14px; padding: 12px 0 12px 12px; }
+
+.pp-counts { border-bottom: 1px solid var(--line); }
+.pp-count { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-top: 1px solid var(--line); }
+.pp-cname { flex: 1; min-width: 0; font-size: 18px; font-weight: 500; }
+.pp-stepper { width: 40px; height: 40px; flex-shrink: 0; border-radius: 20px; border: 0; padding: 0; background: var(--chip); font-size: 22px; line-height: 1; }
+.pp-num { width: 54px; height: 40px; flex-shrink: 0; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); text-align: center; font: inherit; font-size: 19px; color: var(--text); outline: none; }
+
+.pp-card { display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 20px; border: 1px solid var(--line); background: var(--surface); }
+.pp-card .label { margin-top: 4px; }
+.pp-input { height: 44px; min-width: 0; padding: 0 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); font: inherit; font-size: 16px; color: var(--text); outline: none; }
+.pp-input:focus, .pp-num:focus { border-color: #CFCFCB; }
+.pp-ingrow { display: flex; align-items: center; gap: 6px; }
+.pp-ingrow .nm { flex: 1; }
+.pp-ingrow .a { width: 56px; flex-shrink: 0; text-align: center; padding: 0 4px; }
+.pp-ingrow .u { width: 78px; flex-shrink: 0; padding: 0 6px; -webkit-appearance: none; appearance: none; text-align: center; }
+.pp-x { width: 28px; height: 44px; flex-shrink: 0; border: 0; padding: 0; background: none; color: var(--faint); display: flex; align-items: center; justify-content: center; }
+.pp-link-btn { align-self: flex-start; border: 0; background: none; padding: 6px 0; font-size: 15px; font-weight: 500; color: var(--muted); }
+.pp-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 4px; }
+
+.pp-shophead { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.pp-shophead .pp-note { font-size: 16px; }
+.pp-delete { align-self: center; margin-top: 16px; border: 0; background: none; padding: 12px; font-size: 14px; color: var(--faint); }
