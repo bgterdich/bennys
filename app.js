@@ -126,14 +126,18 @@
       ICON.chev + '</a></li>';
   }
 
-  function renderHome() {
-    store(BACK_KEY, '#/');
-    // recipes.json order first; anything starred on this phone after, alphabetically
-    var favs = data.cocktails.filter(isFav).sort(function (a, b) {
+  // recipes.json order first; anything starred on this phone after, alphabetically
+  function favList() {
+    return data.cocktails.filter(isFav).sort(function (a, b) {
       var ia = data.favorites.indexOf(a.id), ib = data.favorites.indexOf(b.id);
       if (ia === -1 && ib === -1) return byName(a, b);
       return (ia === -1 ? 1e6 : ia) - (ib === -1 ? 1e6 : ib);
     });
+  }
+
+  function renderHome() {
+    store(BACK_KEY, '#/');
+    var favs = favList();
     var folders = data.folders
       .map(function (f) { return { f: f, n: inFolder(f.id).length }; })
       .filter(function (x) { return x.n > 0; });
@@ -268,8 +272,24 @@
   var party = null;         // party on screen
   var pickQuery = '';       // drinks-step search
   var draft = null;         // cocktail being added/edited: { id, name, ings: [{ amount, unit, name }] }
+  var pickFolder = '';      // folder open in the drinks picker ('all' = every cocktail), at #/p/<id>/f/<folder>
   var UNITS = ['oz', 'ml', 'dash', 'barspoon', 'tsp', 'g', ''];   // '' = count (no unit)
-  var FRUIT = { 'lime juice': ['lime', 'limes', 1], 'lemon juice': ['lemon', 'lemons', 1.5] };  // rough oz of juice per fruit
+  // Oz of juice per fruit, dry/small to juicy/large (sources in README). Used for "lime juice",
+  // "clarified lime juice" etc.; not for an ingredient offering an alternative ("... or champagne acid").
+  var FRUIT = {
+    lime: { one: 'lime', many: 'limes', lo: 0.75, hi: 1.25 },
+    lemon: { one: 'lemon', many: 'lemons', lo: 1, hi: 2 },
+    grapefruit: { one: 'grapefruit', many: 'grapefruit', lo: 5, hi: 8 }
+  };
+  function fruitFor(key) {
+    var m = key.match(/\b(lime|lemon|grapefruit) juice$/);
+    return m && key.indexOf(' or ') === -1 ? FRUIT[m[1]] : null;
+  }
+  // Fruit to buy for `oz` of juice: juicy/large fruit need the fewest, dry/small the most.
+  function fruitText(f, oz) {
+    var few = Math.ceil(oz / f.hi - 1e-9), most = Math.ceil(oz / f.lo - 1e-9);
+    return (few === most ? few : few + '–' + most) + ' ' + (most === 1 ? f.one : f.many);
+  }
   var FR = { '1/2': '½', '1/3': '⅓', '2/3': '⅔', '1/4': '¼', '3/4': '¾', '1/8': '⅛', '3/8': '⅜', '5/8': '⅝', '7/8': '⅞' };
 
   function loadParties() {
@@ -333,11 +353,8 @@
       if (shop) q = u === 'oz' ? Math.ceil(q * 4 - 1e-9) / 4 : Math.ceil(q - 1e-9);
       return qtyText(q, u);
     });
-    var f = FRUIT[it.key], oz = it.sums.oz;
-    if (shop && f && oz && parts.length === 1) {
-      var k = Math.ceil(oz / f[2] - 1e-9);
-      parts[0] += ' (≈' + k + ' ' + (k === 1 ? f[0] : f[1]) + ')';
-    }
+    var f = fruitFor(it.key), oz = it.sums.oz;
+    if (shop && f && oz && parts.length === 1) parts[0] += ' · ' + fruitText(f, oz);
     return parts.join(' + ');
   }
   function usesText(it) {
@@ -388,12 +405,32 @@
 
   // --- one party ---
 
-  function renderParty(id) {
+  function folderName(id) {
+    if (id === 'all') return 'All cocktails';
+    var f = data.folders.filter(function (x) { return x.id === id; })[0];
+    return f ? f.name : '';
+  }
+  function folderCocktails(id) { return id === 'all' ? data.cocktails.slice().sort(byName) : inFolder(id); }
+  function partyHref(p) { return '#/p/' + encodeURIComponent(p.id); }
+
+  function renderParty(id, folder) {
     party = getParty(id);
     if (!party) return renderParties();
     planning = true;
     pickQuery = '';
     draft = null;
+    pickFolder = folder && folderName(folder) ? folder : '';
+    if (pickFolder) {
+      // One folder of the drinks picker: a level below the party, like a folder below home.
+      app.innerHTML =
+        '<div class="page" style="gap:20px">' +
+        '<a class="back-link" href="' + partyHref(party) + '" data-up>' + ICON.back + esc(party.name) + '</a>' +
+        '<div class="list-head"><h1 class="list-title">' + esc(folderName(pickFolder)) + '</h1>' +
+        '<p class="list-count" id="pp-fcount"></p></div>' +
+        '<div id="pp-list"></div></div>';
+      drawPickList();
+      return;
+    }
     app.innerHTML =
       '<div class="page" style="gap:20px">' +
       '<a class="back-link" href="#/parties" data-up>' + ICON.back + 'Parties</a>' +
@@ -401,7 +438,7 @@
       '<div class="pp-tabs" id="pp-tabs" role="tablist"></div>' +
       '<div class="pp-body" id="pp-body"></div>' +
       '<button class="pp-delete" type="button" data-pp-act="delete">Delete party</button>' +
-      '</div>';
+      '</div><div id="pp-sheet"></div>';
     drawTabs();
     drawBody();
   }
@@ -410,6 +447,7 @@
   function touch() { saveParty(party); }
 
   function drawTabs() {
+    if (!el('pp-tabs')) return;
     var n = partyCocktails(party).length;
     var left = toBuy(party).filter(function (it) { return !party.bought[it.key]; }).length;
     var tabs = [[1, 'Drinks', n || ''], [2, 'Ingredients', ''], [3, 'Shop', n ? left : '']];
@@ -426,7 +464,7 @@
         '<div class="pp-chips" id="pp-chips"></div>' +
         '<div id="pp-form"></div>' +
         '<section class="pp-sec"><input class="search" id="pp-q" type="search" placeholder="Find cocktails" aria-label="Find cocktails" autocomplete="off" value="' + esc(pickQuery) + '">' +
-        '<ul class="pp-list" id="pp-list"></ul></section>' +
+        '<div id="pp-list"></div></section>' +
         '<button class="pp-btn primary pp-next" type="button" data-pp-step="2">Next: ingredients</button>';
       drawChips(); drawForm(); drawPickList();
     } else if (party.step === 2) {
@@ -449,17 +487,43 @@
       body.innerHTML =
         '<div class="pp-shophead"><span class="pp-note" id="pp-left"></span>' +
         '<button class="pp-btn" type="button" data-pp-act="copy" id="pp-copy">Copy list</button></div>' +
-        '<ul class="pp-list" id="pp-shop"></ul>';
+        '<ul class="pp-list" id="pp-shop"></ul>' + CONV_BTN;
       drawShop();
     }
   }
   function emptyStep() {
     return '<p class="empty">Pick some cocktails first.</p>' +
-      '<button class="pp-btn primary pp-next" type="button" data-pp-step="1">Pick cocktails</button>';
+      '<button class="pp-btn primary pp-next" type="button" data-pp-step="1">Pick cocktails</button>' +
+      (party.step === 3 ? CONV_BTN : '');
+  }
+
+  // Quick reference for shopping, from the Shop tab.
+  var CONV_BTN = '<button class="pp-link pp-conv" type="button" data-pp-act="conv">Conversions</button>';
+  function ozOf(ml) { return (Math.round(ml / 29.5735 * 10) / 10) + ' oz'; }
+  function openConversions() {
+    function rows(list) {
+      return '<dl class="pp-conv-list">' + list.map(function (r) {
+        return '<div class="drow"><dt>' + r[0] + '</dt><dd>' + r[1] + '</dd></div>';
+      }).join('') + '</dl>';
+    }
+    function juice(f) { return fracText(f.lo) + '–' + fracText(f.hi) + ' oz'; }
+    el('pp-sheet').innerHTML =
+      '<div class="sheet-wrap"><button class="sheet-backdrop" type="button" data-pp-act="closeconv" aria-label="Close"></button>' +
+      '<section class="sheet pp-conv-sheet" aria-label="Conversions"><div class="grabber"></div><h2>Conversions</h2>' +
+      '<h3 class="label">Juice per fruit (dry/small to juicy/large)</h3>' +
+      rows([['Lime', juice(FRUIT.lime)], ['Lemon', juice(FRUIT.lemon)], ['Grapefruit', juice(FRUIT.grapefruit)]]) +
+      '<h3 class="label">Bottles</h3>' +
+      rows([['50 ml (mini)', ozOf(50)], ['375 ml (half)', ozOf(375)], ['750 ml (a fifth)', ozOf(750)],
+            ['1 L', ozOf(1000)], ['1.75 L (handle)', ozOf(1750)]]) +
+      '<h3 class="label">Small measures</h3>' +
+      rows([['1 oz', '29.6 ml'], ['1 cup', '8 oz'], ['1 tbsp', '½ oz'], ['1 tsp', '⅙ oz']]) +
+      '<p class="pp-note">A 750 ml bottle holds about 12 pours of 2 oz, or 16 of 1½ oz.</p>' +
+      '</section></div>';
   }
 
   // Step 1: drinks
   function drawChips() {
+    if (!el('pp-chips')) return;
     var cs = partyCocktails(party);
     el('pp-chips').innerHTML = cs.length ? cs.map(function (c) {
       return '<button class="pp-chip" type="button" data-pp-pick="' + esc(c.id) + '" aria-label="Remove ' + esc(c.name) + '">' +
@@ -467,24 +531,59 @@
     }).join('') : '<p class="pp-note">Pick the cocktails you’ll make.</p>';
   }
 
+  function isPicked(c) { return party.picks.indexOf(c.id) !== -1; }
+
+  function pickRow(c, custom) {
+    var on = isPicked(c);
+    return '<li class="pp-row"><button class="pp-item" type="button" data-pp-pick="' + esc(c.id) + '" aria-pressed="' + on + '">' +
+      (on ? CHECK.on : CHECK.off) + '<span class="pp-text"><span class="pp-name">' + esc(c.name) + '</span>' +
+      '<span class="pp-sub">' + esc(summary(c) || 'No ingredients yet') + '</span></span></button>' +
+      (custom ? '<button class="pp-edit" type="button" data-pp-edit="' + esc(c.id) + '">Edit</button>' : '') + '</li>';
+  }
+
+  function pickFolderRow(id, icon) {
+    var cs = folderCocktails(id), n = cs.filter(isPicked).length;
+    return '<a class="row" href="' + partyHref(party) + '/f/' + encodeURIComponent(id) + '">' + icon +
+      '<span class="row-name">' + esc(folderName(id)) + '</span>' +
+      (n ? '<span class="pp-badge" aria-label="' + n + ' picked">' + n + '</span>' : '') +
+      '<span class="row-count">' + cs.length + '</span>' + ICON.chev + '</a>';
+  }
+
+  // Drinks picker: inside a folder, that folder's cocktails; on the party page, a search
+  // shows matches from everywhere, otherwise this party's own cocktails, favorites, then folders.
   function drawPickList() {
+    var box = el('pp-list');
+    if (!box) return;
+    if (pickFolder) {
+      var cs = folderCocktails(pickFolder), n = cs.filter(isPicked).length;
+      el('pp-fcount').textContent = n ? n + ' picked' : 'Tap to pick';
+      box.innerHTML = '<ul class="pp-list">' + cs.map(function (c) { return pickRow(c, false); }).join('') + '</ul>';
+      return;
+    }
     var term = pickQuery.trim().toLowerCase();
-    var mine = party.custom.slice().sort(byName), lib = data.cocktails.slice().sort(byName);
-    function match(c) {
-      if (!term) return true;
-      if (c.name.toLowerCase().indexOf(term) !== -1) return true;
-      return (c.ingredients || []).some(function (i) { return String(i.name || '').toLowerCase().indexOf(term) !== -1; });
+    var mine = party.custom.slice().sort(byName);
+    if (term) {
+      var match = function (c) {
+        if (c.name.toLowerCase().indexOf(term) !== -1) return true;
+        return (c.ingredients || []).some(function (i) { return String(i.name || '').toLowerCase().indexOf(term) !== -1; });
+      };
+      var html = mine.filter(match).map(function (c) { return pickRow(c, true); }).join('') +
+        data.cocktails.slice().sort(byName).filter(match).map(function (c) { return pickRow(c, false); }).join('');
+      box.innerHTML = '<ul class="pp-list">' + (html ||
+        '<li class="pp-row"><p class="pp-note pp-pad">No matches. Add it as a new cocktail.</p></li>') + '</ul>';
+      return;
     }
-    function row(c, custom) {
-      var on = party.picks.indexOf(c.id) !== -1;
-      return '<li class="pp-row"><button class="pp-item" type="button" data-pp-pick="' + esc(c.id) + '" aria-pressed="' + on + '">' +
-        (on ? CHECK.on : CHECK.off) + '<span class="pp-text"><span class="pp-name">' + esc(c.name) + '</span>' +
-        '<span class="pp-sub">' + esc(summary(c) || 'No ingredients yet') + '</span></span></button>' +
-        (custom ? '<button class="pp-edit" type="button" data-pp-edit="' + esc(c.id) + '">Edit</button>' : '') + '</li>';
-    }
-    var html = mine.filter(match).map(function (c) { return row(c, true); }).join('') +
-      lib.filter(match).map(function (c) { return row(c, false); }).join('');
-    el('pp-list').innerHTML = html || '<li class="pp-row"><p class="pp-note pp-pad">No matches. Add it as a new cocktail.</p></li>';
+    var favs = favList();
+    var folders = data.folders.filter(function (f) { return inFolder(f.id).length; });
+    box.innerHTML =
+      (mine.length ? '<div class="pp-group"><h2 class="label">This party’s cocktails</h2><ul class="pp-list">' +
+        mine.map(function (c) { return pickRow(c, true); }).join('') + '</ul></div>' : '') +
+      (favs.length ? '<div class="pp-group"><h2 class="label">Favorites</h2><ul class="pp-list">' +
+        favs.map(function (c) { return pickRow(c, false); }).join('') + '</ul></div>' : '') +
+      '<div class="pp-group"><h2 class="label">Library</h2><nav class="rows" aria-label="Folders">' +
+      pickFolderRow('all', ICON.grid) +
+      folders.map(function (f) { return pickFolderRow(f.id, ICON.folder); }).join('') +
+      '</nav></div>';
   }
 
   function drawForm() {
@@ -715,6 +814,10 @@
         delete party.counts[id];
         draft = null; touch();
         drawTabs(); drawChips(); drawForm(); drawPickList();
+      } else if (act === 'conv') {
+        openConversions();
+      } else if (act === 'closeconv') {
+        el('pp-sheet').innerHTML = '';
       } else if (act === 'copy') {
         copyText(shopText()).then(function () { flash(t, 'Copied'); }, function () { flash(t, 'Couldn’t copy'); });
       } else if (act === 'delete') {
@@ -751,7 +854,7 @@
     else if (parts[0] === 'all') renderList('All cocktails', data.cocktails.slice().sort(byName), '#/all');
     else if (parts[0] === 'search') renderSearch();
     else if (parts[0] === 'parties') renderParties();
-    else if (parts[0] === 'p' && id) renderParty(id);
+    else if (parts[0] === 'p' && id) renderParty(id, parts[2] === 'f' && parts[3] ? decodeURIComponent(parts[3]) : '');
     else renderHome();
     shown = norm(location.hash);
     window.scrollTo(0, restore ? scrollPos[shown] || 0 : 0);

@@ -40,7 +40,14 @@ A cocktail quick-reference for the phone: big, glanceable ingredient amounts wit
 
 ## Party planner
 
-**Plan party** (bottom of the home screen) makes a named party: pick cocktails (from the library, or new ones typed in, which stay with that party), optionally say how many of each, tick ingredients on hand, then a shopping list to tick off or copy. Same ingredient names are combined across cocktails; totals show once each cocktail using an ingredient has a count; lime/lemon juice also shows a rough fruit count (≈1 oz per lime, 1.5 oz per lemon). Parties are saved on that phone only (`localStorage` key `bennys.parties`), not in `recipes.json`.
+**Plan party** (bottom of the home screen) makes a named party: pick cocktails (from the library, or new ones typed in, which stay with that party), optionally say how many of each, tick ingredients on hand, then a shopping list to tick off or copy. Same ingredient names are combined across cocktails; totals show once each cocktail using an ingredient has a count; lime, lemon and grapefruit juice also show how many fruit to buy, as a range from juicy/large to dry/small fruit. Drinks are picked like the home screen: favorites at the top, folders to tap into (favorites also appear in their folders), and search across everything. The Shop tab has a **Conversions** sheet (juice per fruit, bottle sizes in oz, small measures).
+
+Juice per fruit, in `FRUIT` in `app.js` (oz, dry/small to juicy/large):
+- Lime ¾–1¼: about 0.8–1.25 from 8–10 tbsp per lb at 4–5 limes per lb (https://www.webstaurantstore.com/blog/2760/juice-in-citrus-fruits.html); 1–1⅓ for medium limes, 6–8 per cup (https://foodservice.sunkist.com/?p=1407).
+- Lemon 1–2: small ~1 to 1.5, large ~2.5 (https://chowhound.com/1675252/how-many-ounces-juice-one-lemon); very small 1, medium 1½, large 2 (https://www.acouplecooks.com/how-much-juice-in-one-lemon); ~1⅓ medium (Sunkist).
+- Grapefruit 5–8: ~5⅓ medium (Sunkist); 6 standard (WebstaurantStore); 8 (https://www.amazingfoodmadeeasy.com/produce_converters/grapefruit).
+
+Parties are saved on that phone only (`localStorage` key `bennys.parties`), not in `recipes.json`.
 
 ## Files
 

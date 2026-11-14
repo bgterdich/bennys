@@ -177,3 +177,13 @@ main { max-width: 520px; margin: 0 auto; }
 .pp-shophead { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .pp-shophead .pp-note { font-size: 16px; }
 .pp-delete { align-self: center; margin-top: 16px; border: 0; background: none; padding: 12px; font-size: 14px; color: var(--faint); }
+.pp-group { display: flex; flex-direction: column; gap: 8px; }
+.pp-group + .pp-group { margin-top: 18px; }
+.pp-badge { min-width: 22px; height: 22px; padding: 0 7px; border-radius: 11px; background: var(--accent); color: var(--on-accent); font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; }
+.pp-conv { align-self: center; margin-top: 8px; background: none; }
+.pp-conv-sheet { max-height: 85vh; max-height: 85svh; overflow-y: auto; gap: 12px; }
+.pp-conv-sheet h3 { margin-top: 6px; }
+.pp-conv-list { margin: 0; border-bottom: 1px solid var(--line); }
+.pp-conv-list .drow { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 17px; }
+.pp-conv-list dt { color: var(--muted); font-weight: 500; }
+.pp-conv-list dd { margin: 0; font-weight: 500; text-align: right; }
