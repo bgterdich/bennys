@@ -387,13 +387,15 @@
       '<div class="page" style="gap:20px">' +
       '<a class="back-link" href="#/" data-up>' + ICON.back + 'Benny’s</a>' +
       '<div class="list-head"><h1 class="list-title">Parties</h1></div>' +
-      '<form class="pp-new" id="pp-new"><input class="search" id="pp-name" type="text" placeholder="New party name" aria-label="New party name" maxlength="60" autocomplete="off">' +
-      '<button class="pp-btn primary" type="submit">Start</button></form>' +
-      (list.length ? '<ul class="clist">' + list.map(function (p) {
+      // Saved parties first, to pick up where you left off; then start a new one.
+      (list.length ? '<section class="pp-group"><h2 class="label">Your parties</h2><ul class="clist">' + list.map(function (p) {
         return '<li><a class="citem" href="#/p/' + encodeURIComponent(p.id) + '"><span class="citem-text">' +
           '<span class="citem-name">' + esc(p.name) + '</span><span class="row-sub">' + esc(progress(p)) + '</span></span>' +
           ICON.chev + '</a></li>';
-      }).join('') + '</ul>' : '') +
+      }).join('') + '</ul></section>' : '') +
+      '<section class="pp-group"><h2 class="label">New party</h2>' +
+      '<form class="pp-new" id="pp-new"><input class="search" id="pp-name" type="text" placeholder="Party name" aria-label="New party name" maxlength="60" autocomplete="off">' +
+      '<button class="pp-btn primary" type="submit">Start</button></form></section>' +
       '</div>';
   }
 
