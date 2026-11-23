@@ -2126,6 +2126,32 @@
           "amount": "squeeze"
         }
       ]
+    },
+    {
+      "id": "mirra-daiquiri",
+      "name": "Mirra Daiquiri",
+      "folders": [
+        "restaurants-bars"
+      ],
+      "color": "#D99A8C",
+      "ingredients": [
+        {
+          "name": "Spirit mix (3:1 rum:Traka)",
+          "amount": 2.5,
+          "unit": "oz"
+        },
+        {
+          "name": "Guava cinnamon syrup",
+          "amount": 0.75,
+          "unit": "oz"
+        },
+        {
+          "name": "Lime juice",
+          "amount": 0.75,
+          "unit": "oz"
+        }
+      ],
+      "notes": "Guava cinnamon syrup: cinnamon tea mixed 1:1 with sugar, then 1:1 with guava syrup. They use guava purée, “the kind that comes in a cylinder.”"
     }
   ]
 }
