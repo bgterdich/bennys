@@ -14,6 +14,14 @@
 
   // ---------- small helpers ----------
 
+  // Escapes text and turns bare https:// URLs into links labeled with their site name.
+  function linkify(s) {
+    return esc(s).replace(/https?:\/\/[^\s<]+[^\s<.,;:)]/g, function (url) {
+      var host = url.replace(/^https?:\/\/(www\.)?/, '').split('/')[0];
+      return '<a class="dlink" href="' + url + '" target="_blank" rel="noopener">' + host + '</a>';
+    });
+  }
+
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (ch) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch];
@@ -209,7 +217,7 @@
       '<h1 class="c-title">' + esc(c.name) + '</h1>' +
       '<div class="ings" id="ings"></div></div>' +
       (details.length ? '<section class="details" aria-label="Details"><dl>' + details.map(function (d) {
-        return '<div class="drow"><dt>' + d[0] + '</dt><dd>' + esc(d[1]) + '</dd></div>';
+        return '<div class="drow"><dt>' + d[0] + '</dt><dd>' + linkify(d[1]) + '</dd></div>';
       }).join('') + '</dl></section>' : '') +
       '<div class="dock" id="dock"></div><div id="sheet"></div>';
     drawAmounts();
